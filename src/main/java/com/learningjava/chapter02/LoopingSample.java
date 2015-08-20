@@ -20,7 +20,7 @@ public class LoopingSample {
         names.add(name2);
     }
 
-    public void forLoop() {
+    public static void forLoop() {
         System.out.println("FOR LOOP");
         for (int index = 0; index < 10; index++) {
             System.out.println(index);
@@ -28,6 +28,7 @@ public class LoopingSample {
     }
 
     public void whileLoop() {
+
         System.out.println("WHILE LOOP");
         int counter = 0;
         while (counter < 10) {
