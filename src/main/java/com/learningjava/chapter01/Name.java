@@ -64,4 +64,30 @@ public class Name {
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Name name = (Name) o;
+
+        if (!first.equals(name.first)) return false;
+        if (!last.equals(name.last)) return false;
+
+        return true;
+    }
+
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        int result = first.hashCode();
+        result = 31 * result + last.hashCode();
+        return result;
+    }
 }
