@@ -47,8 +47,36 @@ public class LoopingSample {
         do {
             System.out.println(counter);
             counter++;
+
+            /*counter = counter + 1;*/
         }
         while (counter < 10);
+    }
+
+    public void showIncrementalBefore() {
+
+        System.out.println("Incremented Before");
+        int counter = 0;
+
+        int value = 1 + (++counter);
+
+
+
+        System.out.println("Value " + value);
+        System.out.println("Counter :" + counter);
+    }
+
+    public void showIncrementalAfter() {
+
+        System.out.println("Incremented After");
+        int counter = 0;
+
+        int value = 1 + (counter++);
+
+
+
+        System.out.println("Value " + value);
+        System.out.println("Counter :" + counter);
     }
 
     /**
@@ -83,7 +111,7 @@ public class LoopingSample {
     public void doLoopingNamesTerrible() {
         int length = names.size();
 
-        for(int index = 0; index<length ; index++) {
+        for (int index = 0; index < length; index++) {
             Name name = names.get(index);
             System.out.println(name.getFirst());
         }
@@ -95,7 +123,6 @@ public class LoopingSample {
     public void loopOverNumbersDivisibleBy2() {
 
     }
-
 
 
     public static void main(String[] args) {
@@ -110,5 +137,9 @@ public class LoopingSample {
         sample.loopOverNames();
 
         sample.doLoopingNamesTerrible();
+
+        sample.showIncrementalAfter();
+
+        sample.showIncrementalBefore();
     }
 }
