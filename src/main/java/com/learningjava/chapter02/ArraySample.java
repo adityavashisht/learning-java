@@ -9,6 +9,8 @@ public class ArraySample {
      */
     private static String[] names = {"Aditya" /* 0 index value*/, "Oliver" /* 1 index value*/};
 
+    private static String[] pepsiBootles = new String[]{"can1", "can2"};
+
 
     private static int[] numbers = {0, 1, 2};
 
@@ -18,21 +20,35 @@ public class ArraySample {
 
     private static long[] roads = {122, 151};
 
-    private static String [] notSureNamesSize = new String[3];
+    private static String[] notSureNamesSize = new String[3];
 
-    public static void loop () {
-        for(int index = 0; index < notSureNamesSize.length; index++) {
+    public static void loop() {
+        for (int index = 0; index < notSureNamesSize.length; index++) {
             System.out.println(notSureNamesSize[index]);
         }
     }
 
+    private static String[] sodas = new String[3];
+
+
+
     static {
+
+        /** static initializer block */
+
         notSureNamesSize[0] = "Aditya";
         notSureNamesSize[1] = "Oliver";
         notSureNamesSize[2] = "Enzo";
+
+        int index = 0;
+
+        while (index < 3) {
+            sodas[index] = Math.random() + "Coke";
+            ++index;
+        }
     }
 
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         loop();
     }
 }
