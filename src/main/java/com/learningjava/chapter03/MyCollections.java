@@ -1,7 +1,6 @@
 package com.learningjava.chapter03;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by vashishta on 8/21/15.
@@ -33,13 +32,15 @@ public class MyCollections {
 
         Phone phone2 = null;
 
-        List<Phone> phones = new ArrayList<Phone>();
+        List<Phone> phones = Collections.synchronizedList(new ArrayList<Phone>());
 
         phones.add(phone);
         phones.add(phone2);
         phones.add(phone3);
 
         contact.setPhoneList(phones);
+
+        //Collections.sort(phones);
 
         System.out.println(phones.size());
 
@@ -51,9 +52,38 @@ public class MyCollections {
         System.out.println(contact.getPhoneSet().size());
     }
 
+    public void showMap() {
+
+        Phone phone = new Phone();
+        phone.setNumber("121212");
+        phone.setPhoneType(PhoneType.HOME);
+
+        Phone phone2 = new Phone();
+        phone2.setNumber("91212");
+        phone2.setPhoneType(PhoneType.HOME);
+
+        Map<String, Phone> keyValue = new HashMap<String, Phone>();
+        keyValue.put("Pravin", phone);
+        keyValue.put("Pravin", phone2);
+
+
+        Set<String> keys = keyValue.keySet();
+
+        for(String key:keys){
+            Phone value = keyValue.get(key);
+
+            System.out.println(value.getNumber());
+        }
+
+    }
+
+
+
     public static void main(String [] args) {
         MyCollections  myCollections = new MyCollections();
         myCollections.buildContacts();
+
+        myCollections.showMap();;
     }
 
 }

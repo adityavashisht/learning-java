@@ -3,7 +3,7 @@ package com.learningjava.chapter03;
 /**
  * Created by vashishta on 8/21/15.
  */
-public class Phone {
+public class Phone implements Comparable {
     PhoneType phoneType;
     String number;
 
@@ -41,5 +41,10 @@ public class Phone {
         int result = phoneType.hashCode();
         result = 31 * result + number.hashCode();
         return result;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
