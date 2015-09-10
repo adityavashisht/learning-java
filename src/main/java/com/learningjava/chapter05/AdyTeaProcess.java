@@ -9,12 +9,12 @@ public class AdyTeaProcess extends TeaTemplate {
 
     @Override
     protected void addMilk() {
-        super.addMilk();
+
     }
 
     @Override
     protected void addSugar() {
-        super.addSugar();
+
     }
 
 
