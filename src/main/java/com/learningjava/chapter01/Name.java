@@ -74,7 +74,7 @@ public class Name {
         Name name = (Name) o;
 
         if (!first.equals(name.first)) return false;
-        if (!last.equals(name.last)) return false;
+
 
         return true;
     }
@@ -87,7 +87,7 @@ public class Name {
     @Override
     public int hashCode() {
         int result = first.hashCode();
-        result = 31 * result + last.hashCode();
+
         return result;
     }
 }
