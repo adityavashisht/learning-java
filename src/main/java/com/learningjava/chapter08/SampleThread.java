@@ -8,6 +8,14 @@ import java.util.concurrent.Executors;
  */
 public class SampleThread implements Runnable {
 
+    private class MyThread implements Runnable {
+
+        @Override
+        public void run() {
+
+        }
+    }
+
     /**
      *
      * @param args
@@ -31,6 +39,7 @@ public class SampleThread implements Runnable {
             System.out.println(index);
             // Anonymous inner class
             executor.execute(this);
+            executor.execute(new MyThread());
 
         }
     }

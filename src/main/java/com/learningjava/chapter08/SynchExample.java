@@ -9,19 +9,17 @@ public class SynchExample {
 
     private String candy = "abc";
 
-    private final String TOKEN = "LOCK";
-
-    private ReentrantLock reentrantLock = new ReentrantLock(true);
-
-    public synchronized String getValue() {
-        return candy;
-    }
+    private static final String TOKEN = "LOCK";
 
     public String getValueWithBlock() {
         synchronized (TOKEN) {
             return candy;
         }
     }
+
+
+    private ReentrantLock reentrantLock = new ReentrantLock(true);
+
 
     public String getWithRentry() {
         String val = "";
